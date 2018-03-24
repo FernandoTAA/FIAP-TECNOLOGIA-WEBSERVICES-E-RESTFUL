@@ -1,0 +1,7 @@
+cd .\FiapScjWs-Soap-Server\src
+javac fiap/scj/ws/soap/*.java
+wsgen -s . -classpath . fiap.scj.ws.soap.MinhaSaudeImpl
+
+
+cd ..\FiapScjWs-Soap-Client\src
+wsimport -keep -p fiap.scj.ws.soap.client http://localhost:8080/minhasaude?wsdl
